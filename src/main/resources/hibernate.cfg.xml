@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		
+		<!-- This property makes Hibernate generate the appropriate SQL for the chosen database. -->
+		<!-- MySQL  :org.hibernate.dialect.MySQLDialect
+			Microsoft SQL Server 2008 : org.hibernate.dialect.SQLServer2008Dialect 
+			Oracle 10g : org.hibernate.dialect.Oracle10gDialect-->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- The JDBC driver class. -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+		<!-- The JDBC URL to the database instance. -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/netweb_db</property>
+		
+		<!-- The database username.-->
+		<property name="hibernate.connection.username">root</property>
+		
+		<!-- The database password.-->
+		<property name="hibernate.connection.password">root</property>
+		
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		
+		<!-- Displaying SQL in console logs.-->
+		<property name="show_sql">true</property>
+
+		<!-- List of XML mapping files -->
+		<mapping resource="employee.hbm.xml"/>
+   
+	</session-factory>
+</hibernate-configuration>
+

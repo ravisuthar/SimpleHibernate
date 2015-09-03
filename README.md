@@ -1,2 +1,0 @@
-# SimpleHibernate
-Hibernate, Maven
