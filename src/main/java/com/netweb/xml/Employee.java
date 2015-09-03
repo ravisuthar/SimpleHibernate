@@ -2,7 +2,8 @@ package com.netweb.xml;
 
 public class Employee {
 	/*
-	 * All classes should contain an ID in order to allow easy identification of your objects within Hibernate and the database. This property maps to the primary key column of a database table.
+	 * All classes should contain an ID in order to allow easy identification of your objects within Hibernate and the database. 
+	 * This property maps to the primary key column of a database table.
 	 */
 	private int id;
 	private String firstName;

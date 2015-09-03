@@ -12,10 +12,13 @@ import org.hibernate.cfg.Configuration;
 
 public class ManageEmployee {
 	private static SessionFactory factory;
+	private static Configuration configuration;
 
 	public static void main(String[] args) {
 		try {
-			factory = new Configuration().configure().buildSessionFactory();
+			configuration = new Configuration();
+			configuration.configure();
+			factory = configuration.buildSessionFactory();
 		} catch (Throwable ex) {
 			System.err.println("Failed to create sessionFactory object." + ex);
 			throw new ExceptionInInitializerError(ex);
@@ -39,13 +42,19 @@ public class ManageEmployee {
 		/* List down new list of the employees */
 		// ME.listEmployees();
 
+		// Add employee
 		// for (int i = 0; i < 10; i++) {
 		// int k = ME.addEmployee(new Employee("first-" + i, "lname" + 1, (1000 * i)));
 		// System.out.println(k);
 		// }
 
+		/* List down all the employees */
 		// ME.listEmployees();
+
+		/* List down all the employees first names */
 		// ME.listEmployeesFirstName();
+
+		/* Get Employee details by employee id */
 		ME.getEmployeeById(167);
 	}
 
@@ -118,7 +127,9 @@ public class ManageEmployee {
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			List<String> nameList = session.createQuery("SELECT E.firstName FROM Employee E").list();
+			String hql = "SELECT E.firstName FROM Employee E";
+			Query query = session.createQuery(hql);
+			List<String> nameList = query.list();
 			for (String name : nameList) {
 				System.out.println(name);
 			}
