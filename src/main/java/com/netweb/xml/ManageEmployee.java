@@ -1,7 +1,18 @@
 package com.netweb.xml;
 
+/**
+ * The Class ManageEmployee.
+ * 
+ * @author ravi.suthar
+ */
 public class ManageEmployee {
 
+	/**
+	 * The main method.
+	 * 
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
 
 		EmployeeRepository ME = new EmployeeRepository();

@@ -1,8 +1,18 @@
 package com.netweb.annotation;
 
-
+/**
+ * The Class ManageUser.
+ * 
+ * @author ravi.suthar
+ */
 public class ManageUser {
 
+	/**
+	 * The main method.
+	 * 
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
 
 		UserReposity ME = new UserReposity();
@@ -11,7 +21,7 @@ public class ManageUser {
 		Integer empID1 = ME.addEmployee("Zara", "Alibaba", 1000);
 		Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
 		Integer empID3 = ME.addEmployee("John", "Paul1", 10000);
- 
+
 		/* List down all the employees */
 		ME.listEmployees();
 

@@ -10,9 +10,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+/**
+ * The Class EmployeeRepository.
+ * 
+ * @author ravi.suthar
+ */
 public class EmployeeRepository implements IEmployeeRepository {
 
+	/** The factory. */
 	private static SessionFactory factory;
+
+	/** The configuration. */
 	private static Configuration configuration;
 
 	static {
@@ -27,6 +35,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to CREATE an employee in the database */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#addEmployee(java.lang.String, java.lang.String, int)
+	 */
 	@Override
 	public Integer addEmployee(String fname, String lname, int salary) {
 		Session session = factory.openSession();
@@ -47,6 +60,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 		return employeeID;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#addEmployee(com.netweb.xml.Employee)
+	 */
 	@Override
 	public Integer addEmployee(Employee emp) {
 		Session session = factory.openSession();
@@ -66,6 +84,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to READ all the employees */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#listEmployees()
+	 */
 	@Override
 	public void listEmployees() {
 		Session session = factory.openSession();
@@ -93,6 +116,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to READ all the employees */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#listEmployeesFirstName()
+	 */
 	@Override
 	public void listEmployeesFirstName() {
 		Session session = factory.openSession();
@@ -116,6 +144,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to READ all the employees */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#getEmployeeById(int)
+	 */
 	@Override
 	public void getEmployeeById(int id) {
 		Session session = factory.openSession();
@@ -144,6 +177,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to UPDATE salary for an employee */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#updateEmployee(java.lang.Integer, int)
+	 */
 	@Override
 	public void updateEmployee(Integer EmployeeID, int salary) {
 		Session session = factory.openSession();
@@ -164,6 +202,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 	}
 
 	/* Method to DELETE an employee from the records */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.netweb.xml.IEmployeeRepository#deleteEmployee(java.lang.Integer)
+	 */
 	@Override
 	public void deleteEmployee(Integer EmployeeID) {
 		Session session = factory.openSession();
