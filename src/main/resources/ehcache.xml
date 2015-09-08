@@ -13,7 +13,7 @@ timeToLiveSeconds="120"
 overflowToDisk="true"
 />
 
-<cache name="Employee"
+<cache name="org.hibernate.cache.UpdateTimestampsCache"
 maxElementsInMemory="500"
 eternal="true"
 timeToIdleSeconds="0"

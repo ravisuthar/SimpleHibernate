@@ -27,9 +27,38 @@ CREATE TABLE `employee` (
   `last_name` varchar(20) DEFAULT NULL,
   `salary` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `employee` */
+
+/*Table structure for table `stock` */
+
+DROP TABLE IF EXISTS `stock`;
+
+CREATE TABLE `stock` (
+  `stockId` int(11) NOT NULL AUTO_INCREMENT,
+  `stockCode` varchar(25) DEFAULT NULL,
+  `stockName` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`stockId`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `stock` */
+
+/*Table structure for table `stockdetail` */
+
+DROP TABLE IF EXISTS `stockdetail`;
+
+CREATE TABLE `stockdetail` (
+  `stockId` int(11) NOT NULL,
+  `compName` varchar(25) DEFAULT NULL,
+  `compDesc` varchar(25) DEFAULT NULL,
+  `remark` varchar(25) DEFAULT NULL,
+  `listedDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`stockId`),
+  CONSTRAINT `FK_stockdetail` FOREIGN KEY (`stockId`) REFERENCES `stock` (`stockId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `stockdetail` */
 
 /*Table structure for table `user` */
 
@@ -41,7 +70,7 @@ CREATE TABLE `user` (
   `last_name` varchar(20) DEFAULT NULL,
   `salary` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
