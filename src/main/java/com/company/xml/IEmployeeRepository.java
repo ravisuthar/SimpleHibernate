@@ -1,4 +1,4 @@
-package com.netweb.xml;
+package com.company.xml;
 
 /**
  * The Interface IEmployeeRepository.
@@ -65,5 +65,25 @@ public interface IEmployeeRepository {
 	 *            the employee id
 	 */
 	void deleteEmployee(Integer EmployeeID);
+
+	/**
+	 * Gets the highest salary.
+	 * 
+	 * @return the highest salary
+	 */
+	void getHighestSalary();
+
+	/**
+	 * Gets the native sql.
+	 * 
+	 * @return the native sql
+	 */
+	void getNativeSQL();
+
+	void getScalarQuries();
+
+	void getEntityQuries();
+
+	void addEmployeesInBatch();
 
 }

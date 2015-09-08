@@ -1,4 +1,4 @@
-package com.netweb.xml;
+package com.company.xml;
 
 /**
  * The Class ManageEmployee.
@@ -18,9 +18,9 @@ public class ManageEmployee {
 		EmployeeRepository ME = new EmployeeRepository();
 
 		/* Add few employee records in database */
-		// Integer empID1 = ME.addEmployee("Zara", "Ali", 1000);
-		// Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
-		// Integer empID3 = ME.addEmployee("John", "Paul", 10000);
+		Integer empID1 = ME.addEmployee("Zara", "Ali", 1000);
+		Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
+		Integer empID3 = ME.addEmployee("John", "Paul", 10000);
 
 		/* List down all the employees */
 		// ME.listEmployees();
@@ -47,7 +47,11 @@ public class ManageEmployee {
 		// ME.listEmployeesFirstName();
 
 		/* Get Employee details by employee id */
-		ME.getEmployeeById(167);
+		// ME.getEmployeeById(167);
+
+		// ME.addEmployeesInBatch();
+
+		// ME.getEmployeeById(200);
 	}
 
 }

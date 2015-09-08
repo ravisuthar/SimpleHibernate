@@ -4,13 +4,14 @@
 	 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-	<class name="com.netweb.xml.Employee" table="EMPLOYEE">
+	<class name="com.company.xml.Employee" table="EMPLOYEE">
       
 		<meta attribute="class-description">
          This class contains the employee detail. 
 		</meta>
       
 		<!-- id element maps the unique ID attribute in class to the primary key of the database table. -->
+		<cache usage="read-write"/>
 		<id name="id" type="int" column="id">
 			<generator class="native"/>
 		</id>

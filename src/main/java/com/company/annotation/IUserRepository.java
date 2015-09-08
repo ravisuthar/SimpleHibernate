@@ -1,4 +1,4 @@
-package com.netweb.annotation;
+package com.company.annotation;
 
 /**
  * The Interface IUserRepository.

@@ -1,4 +1,4 @@
-package com.netweb.annotation;
+package com.company.annotation;
 
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +23,7 @@ public class UserReposity implements IUserRepository {
 		try {
 			factory = new Configuration().configure().
 			// addPackage("com.xyz") //add package if used.
-					addAnnotatedClass(com.netweb.annotation.User.class).buildSessionFactory();
+					addAnnotatedClass(com.company.annotation.User.class).buildSessionFactory();
 		} catch (Throwable ex) {
 			System.err.println("Failed to create sessionFactory object." + ex);
 			throw new ExceptionInInitializerError(ex);
