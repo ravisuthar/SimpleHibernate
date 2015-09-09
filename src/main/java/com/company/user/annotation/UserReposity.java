@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+
+import com.company.utils.HibernateUtil;
 
 /**
  * The Class UserReposity.
@@ -16,29 +16,14 @@ import org.hibernate.cfg.Configuration;
  */
 public class UserReposity implements IUserRepository {
 
-	/** The factory. */
-	private static SessionFactory factory;
-
-	static {
-		try {
-			factory = new Configuration().configure().
-			// addPackage("com.xyz") //add package if used.
-					addAnnotatedClass(com.company.user.annotation.User.class).buildSessionFactory();
-		} catch (Throwable ex) {
-			System.err.println("Failed to create sessionFactory object." + ex);
-			throw new ExceptionInInitializerError(ex);
-		}
-	}
-
-	/* Method to CREATE an employee in the database */
 	/*
-	 * (non-Javadoc)
+	 * Method to CREATE an employee in the database
 	 * 
 	 * @see com.netweb.annotation.IUserRepository#addEmployee(java.lang.String, java.lang.String, int)
 	 */
 	@Override
 	public Integer addEmployee(String fname, String lname, int salary) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		Integer employeeID = null;
 		try {
@@ -60,15 +45,14 @@ public class UserReposity implements IUserRepository {
 		return employeeID;
 	}
 
-	/* Method to READ all the employees */
 	/*
-	 * (non-Javadoc)
+	 * Method to READ all the employees
 	 * 
 	 * @see com.netweb.annotation.IUserRepository#listEmployees()
 	 */
 	@Override
 	public void listEmployees() {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -90,15 +74,14 @@ public class UserReposity implements IUserRepository {
 		}
 	}
 
-	/* Method to UPDATE salary for an employee */
 	/*
-	 * (non-Javadoc)
+	 * Method to UPDATE salary for an employee
 	 * 
 	 * @see com.netweb.annotation.IUserRepository#updateEmployee(java.lang.Integer, int)
 	 */
 	@Override
 	public void updateEmployee(Integer EmployeeID, int salary) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -116,15 +99,14 @@ public class UserReposity implements IUserRepository {
 		}
 	}
 
-	/* Method to DELETE an employee from the records */
 	/*
-	 * (non-Javadoc)
+	 * Method to DELETE an employee from the records
 	 * 
 	 * @see com.netweb.annotation.IUserRepository#deleteEmployee(java.lang.Integer)
 	 */
 	@Override
 	public void deleteEmployee(Integer EmployeeID) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();

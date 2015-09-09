@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 25 April 2011 7:52:33 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-	<class name="com.company.stock.xml.Stock" table="stock" >
+	<class name="com.company.stock.xml.Stock" table="stock" catalog="simplehibernate">
 		<id name="stockId" type="java.lang.Integer">
 			<column name="stockId" />
 			<generator class="identity" />

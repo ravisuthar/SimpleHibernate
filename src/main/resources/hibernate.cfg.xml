@@ -43,6 +43,12 @@
 		<mapping  resource="employee.hbm.xml"/>
 		<mapping  resource="stock.hbm.xml" />
 		<mapping  resource="stockDetail.hbm.xml" />
+		<mapping  class="com.company.stock.annotation.Stock" />
+		<mapping  class="com.company.stock.annotation.StockDetail" />
+		<mapping  class="com.company.user.annotation.User" />
+		
+		<!-- mappings for annotated classes -->
+		<!-- <mapping  class="com.company.user.annotation.*" /> -->
    
 	</session-factory>
 </hibernate-configuration>
